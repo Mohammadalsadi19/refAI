@@ -1,0 +1,2217 @@
+[
+  {
+    "id": 1,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Defender inside penalty area blocks a cross with an extended arm",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "unnatural",
+      "inside_penalty_area": true,
+      "ball_speed": "medium",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Deliberate handball with arm making body unnaturally bigger"
+  },
+  {
+    "id": 2,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Attacker scores with hand after controlling ball",
+    "features": {
+      "player_role": "attacker",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "controlled",
+      "inside_penalty_area": true,
+      "ball_speed": "slow",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Attacker deliberately handled ball before scoring"
+  },
+  {
+    "id": 3,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Ball accidentally hits defender’s arm close to body",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": false,
+      "arm_position": "natural",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "short",
+      "deflection": true,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Arm in natural position, ball deflected unexpectedly"
+  },
+  {
+    "id": 4,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Goalkeeper outside penalty area handles the ball",
+    "features": {
+      "player_role": "goalkeeper",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "extended",
+      "inside_penalty_area": false,
+      "ball_speed": "medium",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Goalkeeper illegally handles ball outside penalty area denying clear chance"
+  },
+  {
+    "id": 5,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Defender uses arm to block shot on goal",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "unnatural",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Deliberate handball denying obvious goal-scoring opportunity"
+  },
+  {
+    "id": 6,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Attacker unintentionally handles ball before teammate scores",
+    "features": {
+      "player_role": "attacker",
+      "body_part": "hand",
+      "deliberate": false,
+      "arm_position": "natural",
+      "inside_penalty_area": false,
+      "ball_speed": "medium",
+      "distance_to_ball": "short",
+      "deflection": true,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Any handball by attacker leading to goal is penalized"
+  },
+  {
+    "id": 7,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Defender raises arm to block aerial ball",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "unnatural",
+      "inside_penalty_area": false,
+      "ball_speed": "fast",
+      "distance_to_ball": "long",
+      "deflection": false,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Deliberate handball stopping attack outside penalty area"
+  },
+  {
+    "id": 8,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Ball ricochets off leg onto arm",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": false,
+      "arm_position": "natural",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "short",
+      "deflection": true,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Ball deflected from own body, arm in natural position"
+  },
+  {
+    "id": 9,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Attacker controls ball with arm before shooting",
+    "features": {
+      "player_role": "attacker",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "controlled",
+      "inside_penalty_area": true,
+      "ball_speed": "slow",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Attacker deliberately handled ball before shot"
+  },
+  {
+    "id": 10,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Defender slides and ball hits trailing arm",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": false,
+      "arm_position": "natural",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Arm position natural during slide, not deliberate"
+  },
+  {
+    "id": 11,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Defender jumps and ball hits raised arm",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "unnatural",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "medium",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Raised arm made body bigger, deliberate handball"
+  },
+  {
+    "id": 12,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Midfielder controls ball with arm before passing",
+    "features": {
+      "player_role": "midfielder",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "controlled",
+      "inside_penalty_area": false,
+      "ball_speed": "slow",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Deliberate arm control to gain advantage"
+  },
+  {
+    "id": 13,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Ball hits defender’s arm while protecting face",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": false,
+      "arm_position": "protective",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Arm used for self-protection, not deliberate"
+  },
+  {
+    "id": 14,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Attacker accidentally handles ball before losing possession",
+    "features": {
+      "player_role": "attacker",
+      "body_part": "hand",
+      "deliberate": false,
+      "arm_position": "natural",
+      "inside_penalty_area": false,
+      "ball_speed": "medium",
+      "distance_to_ball": "short",
+      "deflection": true,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "No advantage gained, accidental contact"
+  },
+  {
+    "id": 15,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Defender blocks shot with arm extended sideways",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "unnatural",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Deliberate handball denying clear goal"
+  },
+  {
+    "id": 16,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Goalkeeper handles ball from teammate’s deliberate kick",
+    "features": {
+      "player_role": "goalkeeper",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "controlled",
+      "inside_penalty_area": true,
+      "ball_speed": "slow",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "indirect_free_kick",
+      "var_review": false
+    },
+    "explanation": "Keeper illegally handled back-pass"
+  },
+  {
+    "id": 17,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Defender on goal line blocks ball with hand",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "unnatural",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Deliberate handball preventing certain goal"
+  },
+  {
+    "id": 18,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Ball hits attacker’s arm unintentionally before rebound",
+    "features": {
+      "player_role": "attacker",
+      "body_part": "hand",
+      "deliberate": false,
+      "arm_position": "natural",
+      "inside_penalty_area": true,
+      "ball_speed": "fast",
+      "distance_to_ball": "short",
+      "deflection": true,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Any attacker handball in build-up penalized"
+  },
+  {
+    "id": 19,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Defender raises arm above head to block cross",
+    "features": {
+      "player_role": "defender",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "unnatural",
+      "inside_penalty_area": true,
+      "ball_speed": "medium",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Arm raised unnaturally, deliberate block"
+  },
+  {
+    "id": 20,
+    "law_id": "Law 12",
+    "incident_type": "handball",
+    "scenario": "Midfielder uses arm to control aerial ball",
+    "features": {
+      "player_role": "midfielder",
+      "body_part": "hand",
+      "deliberate": true,
+      "arm_position": "controlled",
+      "inside_penalty_area": false,
+      "ball_speed": "medium",
+      "distance_to_ball": "short",
+      "deflection": false,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Deliberate arm control outside penalty area"
+  },
+  {
+    "id": 21,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender cleanly wins ball with sliding tackle",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "slide",
+      "contact_with_ball": true,
+      "contact_with_opponent": false,
+      "force": "normal",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Fair tackle, ball played cleanly without opponent contact"
+  },
+  {
+    "id": 22,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender tackles from behind without touching ball",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "from_behind",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "reckless",
+      "location": "midfield",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless tackle from behind, caution required"
+  },
+  {
+    "id": 23,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Striker lunges with studs showing into opponent’s shin",
+    "features": {
+      "player_role": "striker",
+      "tackle_type": "lunge",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "excessive",
+      "location": "penalty_area",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Excessive force, endangering opponent’s safety → direct red card"
+  },
+  {
+    "id": 24,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Midfielder mistimes tackle and trips opponent",
+    "features": {
+      "player_role": "midfielder",
+      "tackle_type": "standing",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "normal",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Careless trip, foul but no card"
+  },
+  {
+    "id": 25,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender tackles opponent denying clear goal-scoring opportunity",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "slide",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "reckless",
+      "location": "penalty_area",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "DOGSO foul, red card and penalty"
+  },
+  {
+    "id": 26,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Attacker shoulder challenge within fair play",
+    "features": {
+      "player_role": "attacker",
+      "tackle_type": "shoulder",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "normal",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Fair shoulder-to-shoulder challenge"
+  },
+  {
+    "id": 27,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender reckless sliding tackle late on opponent",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "slide",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "reckless",
+      "location": "midfield",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless late tackle, caution required"
+  },
+  {
+    "id": 28,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Goalkeeper dives and cleanly wins ball in one-on-one",
+    "features": {
+      "player_role": "goalkeeper",
+      "tackle_type": "dive",
+      "contact_with_ball": true,
+      "contact_with_opponent": false,
+      "force": "normal",
+      "location": "penalty_area",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Fair goalkeeper challenge, ball played first"
+  },
+  {
+    "id": 29,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender tackles with two feet off ground",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "two_footed",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "excessive",
+      "location": "midfield",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Two-footed tackle with excessive force → red card"
+  },
+  {
+    "id": 30,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Midfielder careless trip during pressing",
+    "features": {
+      "player_role": "midfielder",
+      "tackle_type": "standing",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "careless",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Careless foul, no card needed"
+  },
+  {
+    "id": 31,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender slides late and clips opponent’s ankle",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "slide",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "careless",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Careless late contact, foul but no card"
+  },
+  {
+    "id": 32,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Midfielder reckless tackle stopping promising attack",
+    "features": {
+      "player_role": "midfielder",
+      "tackle_type": "standing",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "reckless",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless foul stopping promising attack, caution required"
+  },
+  {
+    "id": 33,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Striker reckless tackle on goalkeeper during clearance",
+    "features": {
+      "player_role": "striker",
+      "tackle_type": "challenge",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "reckless",
+      "location": "penalty_area",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless challenge on goalkeeper, caution required"
+  },
+  {
+    "id": 34,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender two-footed tackle with excessive force",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "two_footed",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "excessive",
+      "location": "midfield",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Excessive force, two-footed tackle → red card"
+  },
+  {
+    "id": 35,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Midfielder careless trip during counterattack",
+    "features": {
+      "player_role": "midfielder",
+      "tackle_type": "standing",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "careless",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Careless trip, foul but no card"
+  },
+  {
+    "id": 36,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender reckless tackle stopping counterattack",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "slide",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "reckless",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless foul stopping counterattack, caution required"
+  },
+  {
+    "id": 37,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Striker lunges dangerously with studs into opponent",
+    "features": {
+      "player_role": "striker",
+      "tackle_type": "lunge",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "excessive",
+      "location": "midfield",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Dangerous lunge with studs, red card"
+  },
+  {
+    "id": 38,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender careless push during aerial duel",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "push",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "careless",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Careless push, foul but no card"
+  },
+  {
+    "id": 39,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Midfielder reckless tackle with late contact",
+    "features": {
+      "player_role": "midfielder",
+      "tackle_type": "standing",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "reckless",
+      "location": "midfield",
+      "endangering_safety": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless late contact, caution required"
+  },
+  {
+    "id": 40,
+    "law_id": "Law 12",
+    "incident_type": "tackle",
+    "scenario": "Defender excessive force tackle endangering opponent",
+    "features": {
+      "player_role": "defender",
+      "tackle_type": "slide",
+      "contact_with_ball": false,
+      "contact_with_opponent": true,
+      "force": "excessive",
+      "location": "penalty_area",
+      "endangering_safety": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Excessive force tackle inside penalty area, red card and penalty"
+  },
+  {
+    "id": 41,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker receives ball behind last defender",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": true,
+      "interfering_with_play": true,
+      "interfering_with_opponent": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "indirect_free_kick",
+      "var_review": false
+    },
+    "explanation": "Attacker clearly offside when receiving pass"
+  },
+  {
+    "id": 42,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker in offside position but does not interfere",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": false,
+      "interfering_with_play": false,
+      "interfering_with_opponent": false,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Offside position alone is not an offence"
+  },
+  {
+    "id": 43,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker in offside position blocks goalkeeper’s view",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": false,
+      "interfering_with_play": false,
+      "interfering_with_opponent": true,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "indirect_free_kick",
+      "var_review": true
+    },
+    "explanation": "Interfering with opponent by blocking vision"
+  },
+  {
+    "id": 44,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker receives ball directly from goal kick",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": true,
+      "restart_type": "goal_kick",
+      "interfering_with_play": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "No offside offence from goal kick"
+  },
+  {
+    "id": 45,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker receives ball directly from throw-in",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": true,
+      "restart_type": "throw_in",
+      "interfering_with_play": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "No offside offence from throw-in"
+  },
+  {
+    "id": 46,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker receives ball directly from corner kick",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": true,
+      "restart_type": "corner_kick",
+      "interfering_with_play": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "No offside offence from corner kick"
+  },
+  {
+    "id": 47,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker in offside position plays rebound from goalkeeper",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": true,
+      "interfering_with_play": true,
+      "interfering_with_opponent": false,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "indirect_free_kick",
+      "var_review": true
+    },
+    "explanation": "Offside offence after rebound from goalkeeper"
+  },
+  {
+    "id": 48,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker in offside position receives ball after deflection from defender",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": true,
+      "interfering_with_play": true,
+      "deflection_from_defender": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "indirect_free_kick",
+      "var_review": true
+    },
+    "explanation": "Deflection does not reset offside"
+  },
+  {
+    "id": 49,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker in offside position receives deliberate play from defender",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": true,
+      "interfering_with_play": true,
+      "deliberate_play_by_defender": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Deliberate play by defender resets offside"
+  },
+  {
+    "id": 50,
+    "law_id": "Law 11",
+    "incident_type": "offside",
+    "scenario": "Attacker in offside position challenges opponent for ball",
+    "features": {
+      "player_role": "attacker",
+      "position": "beyond_last_defender",
+      "ball_played": false,
+      "interfering_with_play": false,
+      "interfering_with_opponent": true,
+      "goal_scoring_opportunity": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "none",
+      "restart": "indirect_free_kick",
+      "var_review": false
+    },
+    "explanation": "Offside offence by interfering with opponent"
+  },
+  {
+    "id": 51,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Midfielder stops promising attack with tactical foul",
+    "features": {
+      "player_role": "midfielder",
+      "foul_type": "holding",
+      "location": "midfield",
+      "attack_promise": true,
+      "goal_scoring_opportunity": false,
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Tactical foul stopping promising attack, caution required"
+  },
+  {
+    "id": 52,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Defender delays restart by kicking ball away",
+    "features": {
+      "player_role": "defender",
+      "foul_type": "time_wasting",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Unsporting behavior, delaying restart"
+  },
+  {
+    "id": 53,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Attacker removes shirt during goal celebration",
+    "features": {
+      "player_role": "attacker",
+      "foul_type": "unsporting_behavior",
+      "location": "penalty_area",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "kick_off",
+      "var_review": false
+    },
+    "explanation": "Mandatory caution for removing shirt"
+  },
+  {
+    "id": 54,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Goalkeeper wastes time holding ball too long",
+    "features": {
+      "player_role": "goalkeeper",
+      "foul_type": "time_wasting",
+      "location": "penalty_area",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Keeper exceeded 6-second rule, caution for delay"
+  },
+  {
+    "id": 55,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Midfielder reckless tackle without excessive force",
+    "features": {
+      "player_role": "midfielder",
+      "foul_type": "reckless_tackle",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless tackle, caution required"
+  },
+  {
+    "id": 56,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Defender persistent fouling throughout match",
+    "features": {
+      "player_role": "defender",
+      "foul_type": "persistent_infringement",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Persistent fouling, caution required"
+  },
+  {
+    "id": 57,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Attacker simulation to deceive referee",
+    "features": {
+      "player_role": "attacker",
+      "foul_type": "simulation",
+      "location": "penalty_area",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Simulation (diving), caution required"
+  },
+  {
+    "id": 58,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Midfielder dissent by word or action",
+    "features": {
+      "player_role": "midfielder",
+      "foul_type": "dissent",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Dissent towards referee, caution required"
+  },
+  {
+    "id": 59,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Defender reckless tackle stopping promising attack",
+    "features": {
+      "player_role": "defender",
+      "foul_type": "reckless_tackle",
+      "location": "midfield",
+      "attack_promise": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless foul stopping promising attack"
+  },
+  {
+    "id": 60,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Attacker delays restart by standing in front of ball",
+    "features": {
+      "player_role": "attacker",
+      "foul_type": "time_wasting",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Delaying restart, caution required"
+  },
+  {
+    "id": 61,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Midfielder reckless tackle with late contact",
+    "features": {
+      "player_role": "midfielder",
+      "foul_type": "reckless_tackle",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless late tackle, caution required"
+  },
+  {
+    "id": 62,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Defender unsporting behavior by handling ball deliberately outside penalty area",
+    "features": {
+      "player_role": "defender",
+      "foul_type": "unsporting_behavior",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Deliberate handball outside penalty area, caution required"
+  },
+  {
+    "id": 63,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Goalkeeper dissent after referee decision",
+    "features": {
+      "player_role": "goalkeeper",
+      "foul_type": "dissent",
+      "location": "penalty_area",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Dissent by goalkeeper, caution required"
+  },
+  {
+    "id": 64,
+    "law_id": "Law 12",
+    "incident_type": "yellow_card",
+    "scenario": "Attacker reckless tackle without excessive force",
+    "features": {
+      "player_role": "attacker",
+      "foul_type": "reckless_tackle",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "free_kick",
+      "var_review": false
+    },
+    "explanation": "Reckless tackle, caution required"
+  },
+  {
+  "id": 65,
+  "law_id": "Law 12",
+  "incident_type": "yellow_card",
+  "scenario": "Defender reckless tackle on winger near touchline",
+  "features": {
+    "player_role": "defender",
+    "foul_type": "reckless_tackle",
+    "location": "touchline",
+    "attack_promise": true,
+    "deliberate": true
+  },
+  "decision": {
+    "foul": true,
+    "card": "yellow",
+    "restart": "free_kick",
+    "var_review": false
+  },
+  "explanation": "Reckless tackle stopping promising attack, caution required"
+},
+
+  {
+    "id": 66,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Defender denies obvious goal-scoring opportunity by handball on goal line",
+    "features": {
+      "player_role": "defender",
+      "foul_type": "deliberate_handball",
+      "location": "penalty_area",
+      "dogso": true,
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Deliberate handball denying certain goal → red card"
+  },
+  {
+    "id": 67,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Striker violent conduct punching opponent off the ball",
+    "features": {
+      "player_role": "striker",
+      "foul_type": "violent_conduct",
+      "location": "midfield",
+      "dogso": false,
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Violent conduct off the ball → direct red card"
+  },
+  {
+    "id": 68,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Midfielder serious foul play with studs into opponent’s knee",
+    "features": {
+      "player_role": "midfielder",
+      "foul_type": "serious_foul_play",
+      "location": "midfield",
+      "dogso": false,
+      "deliberate": true,
+      "force": "excessive"
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Excessive force endangering safety → red card"
+  },
+  {
+    "id": 69,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Goalkeeper outside penalty area fouls attacker denying clear chance",
+    "features": {
+      "player_role": "goalkeeper",
+      "foul_type": "dogso_foul",
+      "location": "outside_penalty_area",
+      "dogso": true,
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "DOGSO foul by goalkeeper outside area → red card"
+  },
+  {
+    "id": 70,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Defender two-footed tackle with excessive force",
+    "features": {
+      "player_role": "defender",
+      "foul_type": "serious_foul_play",
+      "location": "midfield",
+      "dogso": false,
+      "deliberate": true,
+      "force": "excessive"
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Two-footed tackle endangering safety → red card"
+  },
+  {
+    "id": 71,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Attacker spits at opponent",
+    "features": {
+      "player_role": "attacker",
+      "foul_type": "spitting",
+      "location": "midfield",
+      "dogso": false,
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Spitting is violent conduct → red card"
+  },
+  {
+    "id": 72,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Midfielder uses abusive language towards referee",
+    "features": {
+      "player_role": "midfielder",
+      "foul_type": "abusive_language",
+      "location": "midfield",
+      "dogso": false,
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "red",
+      "restart": "play_on",
+      "var_review": false
+    },
+    "explanation": "Abusive language towards referee → red card"
+  },
+  {
+    "id": 73,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Defender violent conduct headbutting opponent",
+    "features": {
+      "player_role": "defender",
+      "foul_type": "violent_conduct",
+      "location": "penalty_area",
+      "dogso": false,
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "penalty",
+      "var_review": true
+    },
+    "explanation": "Headbutt is violent conduct → red card"
+  },
+  {
+    "id": 74,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Striker serious foul play with excessive force tackle",
+    "features": {
+      "player_role": "striker",
+      "foul_type": "serious_foul_play",
+      "location": "midfield",
+      "dogso": false,
+      "deliberate": true,
+      "force": "excessive"
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Excessive force tackle endangering safety → red card"
+  },
+  {
+    "id": 75,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Goalkeeper violent conduct striking opponent after whistle",
+    "features": {
+      "player_role": "goalkeeper",
+      "foul_type": "violent_conduct",
+      "location": "penalty_area",
+      "dogso": false,
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Violent conduct after play stopped → red card"
+  },
+   {
+    "id": 76,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Defender violent conduct by elbowing opponent in aerial duel",
+    "features": {
+      "player_role": "defender",
+      "foul_type": "violent_conduct",
+      "location": "midfield",
+      "deliberate": true,
+      "force": "excessive"
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Elbow to opponent’s face is violent conduct → red card"
+  },
+  {
+    "id": 77,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Midfielder serious foul play with studs into opponent’s chest",
+    "features": {
+      "player_role": "midfielder",
+      "foul_type": "serious_foul_play",
+      "location": "midfield",
+      "deliberate": true,
+      "force": "excessive"
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Excessive force tackle endangering safety → red card"
+  },
+  {
+    "id": 78,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Attacker violent conduct by headbutting opponent off the ball",
+    "features": {
+      "player_role": "attacker",
+      "foul_type": "violent_conduct",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Headbutt is violent conduct → red card"
+  },
+  {
+    "id": 79,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Goalkeeper serious foul play charging opponent with excessive force",
+    "features": {
+      "player_role": "goalkeeper",
+      "foul_type": "serious_foul_play",
+      "location": "outside_penalty_area",
+      "deliberate": true,
+      "force": "excessive"
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick",
+      "var_review": true
+    },
+    "explanation": "Excessive force by goalkeeper outside area → red card"
+  },
+  {
+    "id": 80,
+    "law_id": "Law 12",
+    "incident_type": "red_card",
+    "scenario": "Midfielder spits at referee",
+    "features": {
+      "player_role": "midfielder",
+      "foul_type": "spitting",
+      "location": "midfield",
+      "deliberate": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "red",
+      "restart": "play_on",
+      "var_review": true
+    },
+    "explanation": "Spitting at referee is violent conduct → red card"
+  },
+
+  {
+    "id": 81,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Player substituted correctly during stoppage",
+    "features": {
+      "player_role": "midfielder",
+      "substitution_type": "normal",
+      "time": "stoppage",
+      "referee_permission": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on"
+    },
+    "explanation": "Proper substitution procedure followed"
+  },
+  {
+    "id": 82,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Player enters field without referee permission",
+    "features": {
+      "player_role": "defender",
+      "substitution_type": "illegal_entry",
+      "time": "active_play",
+      "referee_permission": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "indirect_free_kick"
+    },
+    "explanation": "Entering without referee permission → caution"
+  },
+  {
+    "id": 83,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Substitute enters before replaced player leaves",
+    "features": {
+      "player_role": "substitute",
+      "substitution_type": "early_entry",
+      "time": "stoppage",
+      "referee_permission": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "indirect_free_kick"
+    },
+    "explanation": "Substitute must wait until player leaves"
+  },
+  {
+    "id": 84,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Player refuses to leave after substitution",
+    "features": {
+      "player_role": "attacker",
+      "substitution_type": "refusal",
+      "time": "stoppage",
+      "referee_permission": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "play_on"
+    },
+    "explanation": "Refusal to leave → caution for delaying restart"
+  },
+  {
+    "id": 85,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Substitute enters and scores without permission",
+    "features": {
+      "player_role": "substitute",
+      "substitution_type": "illegal_entry",
+      "time": "active_play",
+      "referee_permission": false
+    },
+    "decision": {
+      "foul": true,
+      "card": "yellow",
+      "restart": "indirect_free_kick"
+    },
+    "explanation": "Goal disallowed, substitute entered illegally"
+  },
+  {
+    "id": 86,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Player substituted at half-time without referee signal",
+    "features": {
+      "player_role": "midfielder",
+      "substitution_type": "half_time",
+      "time": "half_time",
+      "referee_permission": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "kick_off"
+    },
+    "explanation": "Half-time substitutions allowed without signal"
+  },
+  {
+    "id": 87,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Substitute commits violent conduct after entering",
+    "features": {
+      "player_role": "substitute",
+      "substitution_type": "normal",
+      "time": "active_play",
+      "referee_permission": true
+    },
+    "decision": {
+      "foul": true,
+      "card": "red",
+      "restart": "free_kick"
+    },
+    "explanation": "Substitute subject to disciplinary action"
+  },
+  {
+    "id": 88,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Player leaves field without referee permission",
+    "features": {
+      "player_role": "defender",
+      "substitution_type": "illegal_exit",
+      "time": "active_play",
+      "referee_permission": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "play_on"
+    },
+    "explanation": "Leaving without permission → caution"
+  },
+  {
+    "id": 89,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Team exceeds maximum allowed substitutions",
+    "features": {
+      "player_role": "team",
+      "substitution_type": "exceed_limit",
+      "time": "stoppage",
+      "referee_permission": true
+    },
+    "decision": {
+      "foul": false,
+      "card": "none",
+      "restart": "play_on"
+    },
+    "explanation": "Competition rules breached, referee reports incident"
+  },
+  {
+    "id": 90,
+    "law_id": "Law 3",
+    "incident_type": "substitution",
+    "scenario": "Substitute enters field of play to celebrate goal",
+    "features": {
+      "player_role": "substitute",
+      "substitution_type": "illegal_entry",
+      "time": "goal_celebration",
+      "referee_permission": false
+    },
+    "decision": {
+      "foul": false,
+      "card": "yellow",
+      "restart": "kick_off"
+    },
+    "explanation": "Entering field illegally during celebration → caution"
+  },
+  {
+    "id": 91,
+    "law_id": "Law 10",
+    "incident_type": "goal",
+    "scenario": "Ball fully crosses goal line between posts and under crossbar",
+    "features": {
+      "ball_crossed_line": true,
+      "between_posts": true,
+      "under_crossbar": true,
+      "no_foul": true
+    },
+    "decision": {
+      "goal_awarded": true,
+      "restart": "kick_off"
+    },
+    "explanation": "Valid goal, ball completely crossed line"
+  },
+  {
+    "id": 92,
+    "law_id": "Law 10",
+    "incident_type": "cancelled_goal",
+    "scenario": "Attacker scores using deliberate handball",
+    "features": {
+      "ball_crossed_line": true,
+      "handball": true,
+      "deliberate": true
+    },
+    "decision": {
+      "goal_awarded": false,
+      "restart": "free_kick"
+    },
+    "explanation": "Goal disallowed due to deliberate handball"
+  },
+  {
+    "id": 93,
+    "law_id": "Law 10",
+    "incident_type": "cancelled_goal",
+    "scenario": "Attacker offside before scoring",
+    "features": {
+      "ball_crossed_line": true,
+      "offside": true,
+      "interfering_with_play": true
+    },
+    "decision": {
+      "goal_awarded": false,
+      "restart": "indirect_free_kick"
+    },
+    "explanation": "Goal disallowed due to offside offence"
+  },
+  {
+    "id": 94,
+    "law_id": "Law 10",
+    "incident_type": "goal",
+    "scenario": "Ball deflects off defender into own goal",
+    "features": {
+      "ball_crossed_line": true,
+      "own_goal": true,
+      "no_foul": true
+    },
+    "decision": {
+      "goal_awarded": true,
+      "restart": "kick_off"
+    },
+    "explanation": "Own goal is valid if no foul occurred"
+  },
+  {
+    "id": 95,
+    "law_id": "Law 10",
+    "incident_type": "cancelled_goal",
+    "scenario": "Goalkeeper fouled before ball crosses line",
+    "features": {
+      "ball_crossed_line": true,
+      "foul_on_goalkeeper": true
+    },
+    "decision": {
+      "goal_awarded": false,
+      "restart": "free_kick"
+    },
+    "explanation": "Goal disallowed due to foul on goalkeeper"
+  },
+  {
+    "id": 96,
+    "law_id": "Law 10",
+    "incident_type": "goal",
+    "scenario": "Ball rebounds off referee and attacker scores",
+    "features": {
+      "ball_crossed_line": true,
+      "referee_contact": true,
+      "goal_scoring_opportunity": true
+    },
+    "decision": {
+      "goal_awarded": true,
+      "restart": "kick_off"
+    },
+    "explanation": "Ball hitting referee does not invalidate goal"
+  },
+  {
+    "id": 97,
+    "law_id": "Law 10",
+    "incident_type": "cancelled_goal",
+    "scenario": "Attacker scores after whistle blown",
+    "features": {
+      "ball_crossed_line": true,
+      "play_stopped": true
+    },
+    "decision": {
+      "goal_awarded": false,
+      "restart": "free_kick"
+    },
+    "explanation": "Goal disallowed, play had already stopped"
+  },
+  {
+    "id": 98,
+    "law_id": "Law 10",
+    "incident_type": "goal",
+    "scenario": "Ball crosses line after hitting crossbar and bouncing down",
+    "features": {
+      "ball_crossed_line": true,
+      "between_posts": true,
+      "under_crossbar": true
+    },
+    "decision": {
+      "goal_awarded": true,
+      "restart": "kick_off"
+    },
+    "explanation": "Ball fully crossed line, valid goal"
+  },
+  {
+    "id": 99,
+    "law_id": "Law 10",
+    "incident_type": "cancelled_goal",
+    "scenario": "Attacker scores but committed foul in build-up",
+    "features": {
+      "ball_crossed_line": true,
+      "foul_in_attack": true
+    },
+    "decision": {
+      "goal_awarded": false,
+      "restart": "free_kick"
+    },
+    "explanation": "Goal disallowed due to foul in build-up"
+  },
+  {
+    "id": 100,
+    "law_id": "Law 10",
+    "incident_type": "goal",
+    "scenario": "Ball crosses line after deflection off goalkeeper",
+    "features": {
+      "ball_crossed_line": true,
+      "goalkeeper_contact": true,
+      "no_foul": true
+    },
+    "decision": {
+      "goal_awarded": true,
+      "restart": "kick_off"
+    },
+    "explanation": "Valid goal, ball crossed line after deflection"
+  },
+
+  {
+    "id": 101,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Goal scored, check for offside in build-up",
+    "features": {
+      "review_type": "goal",
+      "possible_offence": "offside",
+      "var_initiated": true
+    },
+    "decision": {
+      "goal_awarded": false,
+      "restart": "indirect_free_kick"
+    },
+    "explanation": "VAR disallows goal due to offside"
+  },
+  {
+    "id": 102,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Penalty awarded, check for foul inside or outside area",
+    "features": {
+      "review_type": "penalty",
+      "possible_offence": "location_of_foul",
+      "var_initiated": true
+    },
+    "decision": {
+      "penalty_awarded": true,
+      "restart": "penalty"
+    },
+    "explanation": "VAR confirms foul inside penalty area"
+  },
+  {
+    "id": 103,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Red card given, check for mistaken identity",
+    "features": {
+      "review_type": "red_card",
+      "possible_offence": "mistaken_identity",
+      "var_initiated": true
+    },
+    "decision": {
+      "card_corrected": true,
+      "restart": "free_kick"
+    },
+    "explanation": "VAR corrects mistaken identity, card shown to right player"
+  },
+  {
+    "id": 104,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Goal scored, check for handball in build-up",
+    "features": {
+      "review_type": "goal",
+      "possible_offence": "handball",
+      "var_initiated": true
+    },
+    "decision": {
+      "goal_awarded": false,
+      "restart": "free_kick"
+    },
+    "explanation": "VAR disallows goal due to attacker handball"
+  },
+  {
+    "id": 105,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Penalty not awarded, VAR checks for clear foul",
+    "features": {
+      "review_type": "penalty",
+      "possible_offence": "foul",
+      "var_initiated": true
+    },
+    "decision": {
+      "penalty_awarded": true,
+      "restart": "penalty"
+    },
+    "explanation": "VAR awards penalty after clear foul detected"
+  },
+  {
+    "id": 106,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Red card incident, check for excessive force",
+    "features": {
+      "review_type": "red_card",
+      "possible_offence": "serious_foul_play",
+      "var_initiated": true
+    },
+    "decision": {
+      "card_upheld": true,
+      "restart": "free_kick"
+    },
+    "explanation": "VAR confirms serious foul play, red card stands"
+  },
+  {
+    "id": 107,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Goal scored, check if ball fully crossed line",
+    "features": {
+      "review_type": "goal",
+      "possible_offence": "ball_not_crossed_line",
+      "var_initiated": true
+    },
+    "decision": {
+      "goal_awarded": true,
+      "restart": "kick_off"
+    },
+    "explanation": "VAR confirms ball fully crossed line, goal valid"
+  },
+  {
+    "id": 108,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Penalty awarded, check for simulation",
+    "features": {
+      "review_type": "penalty",
+      "possible_offence": "simulation",
+      "var_initiated": true
+    },
+    "decision": {
+      "penalty_cancelled": true,
+      "restart": "indirect_free_kick"
+    },
+    "explanation": "VAR cancels penalty, attacker simulated foul"
+  },
+  {
+    "id": 109,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Red card given, check if only yellow required",
+    "features": {
+      "review_type": "red_card",
+      "possible_offence": "reckless_not_excessive",
+      "var_initiated": true
+    },
+    "decision": {
+      "card_downgraded": true,
+      "restart": "free_kick"
+    },
+    "explanation": "VAR downgrades red card to yellow"
+  },
+  {
+    "id": 110,
+    "law_id": "VAR Protocol",
+    "incident_type": "var",
+    "scenario": "Goal scored, check for foul in build-up",
+    "features": {
+      "review_type": "goal",
+      "possible_offence": "foul_in_attack",
+      "var_initiated": true
+    },
+    "decision": {
+      "goal_awarded": false,
+      "restart": "free_kick"
+    },
+    "explanation": "VAR disallows goal due to foul in build-up"
+  }
+  ]
