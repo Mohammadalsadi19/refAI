@@ -1,0 +1,31 @@
+233
+An attacker in an offside position (1) runs towards the ball and does not touch
+the ball. The assistant referee must signal ‘goal kick’.
+An attacker in an offside position (A) is clearly obstructing the goalkeeper’s line
+of vision. The player must be penalised for preventing an opponent from playing or
+being able to play the ball.
+Goalkeeper (GK)
+Defender
+Attacker
+Referee
+Movement of the player
+Movement of the ball
+Interfering with play
+Goal kick
+5
+(1)
+(2)
+(GK)
+Goalkeeper (GK)
+Defender
+Attacker
+Referee
+Movement of the player
+Movement of the ball
+Interfering with an opponent
+Offside
+offence
+6
+(A)
+(GK)
+Laws of the Game 2026/27  |  Practical guidelines for match officials

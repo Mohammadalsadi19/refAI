@@ -4,7 +4,6 @@ import re
 import sys
 import time
 from collections import defaultdict
-
 import joblib
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -15,7 +14,7 @@ from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-DATASET_FILE = "referee_dataset_v1.json"
+DATASET_FILE = "referee_dataset.json"
 EMB_CACHE_FILE = "case_embeddings_cache.json"
 CLASSIFIER_FILE = "incident_classifier.pkl"
 PREDICTION_LOG_FILE = "last_prediction.json"
@@ -24,7 +23,113 @@ CLASSIFIER_CONFIDENCE_THRESHOLD = 0.60
 PRECEDENT_SCORE_THRESHOLD = 0.55
 MODEL_NAME = "deepseek/deepseek-chat"
 
+RAG_INDEX_FILE = "knowledge/faiss.index"
+RAG_CHUNKS_FILE = "knowledge/chunks.json"
+RAG_META_FILE = "knowledge/metadata.json"
+RAG_TOP_K = 3
+
 text_model = SentenceTransformer("all-MiniLM-L6-v2")
+
+
+# ==========================================================
+# RAG LAYER — retrieves the actual IFAB Laws of the Game text that
+# supports a decision. Built from knowledge/pdf/IFAB_Laws_2025.pdf via
+# scripts/extract_ifab_text.py -> chunk_ifab_text.py -> build_ifab_faiss.py.
+#
+# This is retrieval for EXPLAINABILITY only, exactly like precedent
+# matching: it never feeds back into apply_law() and never changes the
+# decision. It answers "which rulebook passage backs this up?", not
+# "what should the decision be?".
+# ==========================================================
+def build_rag_keywords(incident_type, features, decision):
+    """Pulls the exact IFAB terminology already present in this case's own
+    features/decision — used to boost retrieval toward matching law text
+    instead of relying on dense similarity alone."""
+    terms = [incident_type.replace("_", " ")]
+    for v in features.values():
+        if isinstance(v, str):
+            terms.append(v.replace("_", " "))
+    for key in ("card", "restart"):
+        v = decision.get(key)
+        if isinstance(v, str) and v not in ("none",):
+            terms.append(v.replace("_", " "))
+    if decision.get("card") == "red":
+        terms += ["serious foul play", "violent conduct", "sending-off"]
+    if decision.get("card") == "yellow":
+        terms += ["caution", "careless"]
+    return list(dict.fromkeys(terms))  # de-duplicate, keep order
+
+
+class IFABRetriever:
+    def __init__(self, index_path=RAG_INDEX_FILE, chunks_path=RAG_CHUNKS_FILE,
+                 meta_path=RAG_META_FILE):
+        import faiss
+        self.faiss = faiss
+        self.index = faiss.read_index(index_path)
+        with open(chunks_path, "r", encoding="utf-8") as f:
+            self.chunks = json.load(f)
+        with open(meta_path, "r", encoding="utf-8") as f:
+            self.metadata = json.load(f)
+
+    def search(self, query_text, top_k=RAG_TOP_K, keyword_terms=None, candidate_pool=15):
+        query_vec = text_model.encode(query_text).astype("float32")
+        query_vec = np.expand_dims(query_vec, axis=0)
+        self.faiss.normalize_L2(query_vec)  # must match the index's normalization
+        similarities, indices = self.index.search(query_vec, candidate_pool)
+
+        candidates = []
+        for rank, idx in enumerate(indices[0]):
+            if 0 <= idx < len(self.chunks):
+                candidates.append({
+                    "rank": rank + 1,
+                    "similarity": float(similarities[0][rank]),
+                    "text": self.chunks[idx]["text"],
+                    "source": self.metadata[idx]["file"],
+                })
+
+        # Hybrid re-rank: pure dense retrieval with a general-purpose
+        # embedding model often under-matches narrative scenario text
+        # against dense legal/glossary text (register mismatch). Since
+        # we already know the exact feature values and decision from the
+        # rule engine, boost chunks that literally contain that
+        # terminology (e.g. "excessive force", "DOGSO", "reckless").
+        if keyword_terms:
+            terms = [t.lower() for t in keyword_terms if t]
+            for c in candidates:
+                text_lower = c["text"].lower()
+                hits = sum(1 for t in terms if t in text_lower)
+                c["keyword_hits"] = hits
+                c["combined_score"] = c["similarity"] + 0.15 * hits
+            candidates.sort(key=lambda c: c["combined_score"], reverse=True)
+        else:
+            for c in candidates:
+                c["keyword_hits"] = 0
+                c["combined_score"] = c["similarity"]
+
+        return candidates[:top_k]
+
+
+_rag_retriever = None
+_rag_load_attempted = False
+
+
+def get_rag_retriever():
+    """Lazily loads the RAG index once. Returns None (with a one-time
+    warning) if faiss or the knowledge files aren't available, so the
+    rest of the pipeline keeps working without it."""
+    global _rag_retriever, _rag_load_attempted
+    if _rag_retriever is not None:
+        return _rag_retriever
+    if _rag_load_attempted:
+        return None
+    _rag_load_attempted = True
+    try:
+        _rag_retriever = IFABRetriever()
+        return _rag_retriever
+    except Exception as e:
+        print(f"⚠️  RAG knowledge base unavailable ({e}). "
+              f"Continuing without law-text citations.")
+        return None
 
 with open(DATASET_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
@@ -803,6 +908,21 @@ def main():
     print("\n===== REFEREE DECISION (Rule Engine) =====")
     print(json.dumps(decision, indent=2))
     print("\nExplanation:", explanation)
+
+    # --- RAG: retrieve the actual IFAB Law text backing this decision ---
+    retriever = get_rag_retriever()
+    if retriever is not None:
+        rag_keywords = build_rag_keywords(incident_type, user_features, decision)
+        law_hits = retriever.search(user_text + " " + explanation, top_k=RAG_TOP_K,
+                                     keyword_terms=rag_keywords)
+        if law_hits:
+            print("\n===== LEGAL BASIS (IFAB Laws of the Game) =====")
+            for hit in law_hits:
+                print(f"[{hit['source']} | similarity={round(hit['similarity'], 3)} "
+                      f"| keyword_hits={hit['keyword_hits']}]")
+                snippet = hit["text"][:400].strip()
+                print(snippet + ("..." if len(hit["text"]) > 400 else ""))
+                print("-" * 60)
 
     # --- Precedent matching (explainability only, never overrides the decision) ---
     combined_embedding = text_model.encode(user_text + " " + explanation)

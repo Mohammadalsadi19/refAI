@@ -1,21 +1,21 @@
 {
   "incident_type": "handball",
-  "classifier_confidence": 0.2978938106621695,
+  "classifier_confidence": 0.3219792731338004,
   "features": {
     "player_role": "defender",
-    "deliberate": true,
+    "deliberate": false,
     "arm_position": "unnatural",
     "inside_penalty_area": true,
-    "ball_speed": "fast",
+    "ball_speed": "medium",
     "distance_to_ball": "short",
-    "deflection": false,
+    "deflection": true,
     "goal_scoring_opportunity": true
   },
   "decision": {
-    "foul": true,
-    "card": "red",
-    "restart": "penalty",
-    "var_review": true
+    "foul": false,
+    "card": "none",
+    "restart": "play_on",
+    "var_review": false
   },
-  "explanation": "Handball offense: deliberate contact, inside the penalty area (penalty). Red card: denied an obvious goal-scoring opportunity."
+  "explanation": "No handball offense: contact was accidental with the arm in a natural position."
 }

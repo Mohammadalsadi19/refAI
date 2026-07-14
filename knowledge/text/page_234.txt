@@ -1,0 +1,32 @@
+234
+An attacker in an offside position (A) runs towards the ball but does not prevent
+the opponent from playing or being able to play the ball.
+(A) is not challenging an opponent (B) for the ball.
+An attacker in an offside position (A) is not clearly obstructing the goalkeeper’s
+line of vision or challenging an opponent for the ball.
+Goalkeeper (GK)
+Defender
+Attacker
+Referee
+Movement of the player
+Movement of the ball
+Interfering with an opponent
+Not offside
+offence
+Corner kick
+8
+(B)
+(A)
+(GK)
+Goalkeeper (GK)
+Defender
+Attacker
+Referee
+Movement of the player
+Movement of the ball
+Interfering with an opponent
+Not offside
+offence
+7
+(A)
+(GK)

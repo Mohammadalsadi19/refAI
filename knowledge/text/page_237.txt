@@ -1,0 +1,38 @@
+237
+The shot by a team-mate (A) rebounds off or is deflected by an opponent to
+attacker (B), who is penalised for playing or touching the ball having previously
+been in an offside position.
+An attacker (C) is in an offside position, not interfering with an opponent, when a
+team-mate (A) passes the ball to player (B1) in an onside position who runs
+towards the opponents’ goal and passes the ball (B2) to team-mate (C).
+Attacker (C) was in an onside position when the ball was passed, so cannot be
+penalised.
+Goalkeeper (GK)
+Defender
+Attacker
+Referee
+Movement of the player
+Movement of the ball
+Gaining advantage
+Offside
+offence
+13
+(B)
+(A)
+(GK)
+Goalkeeper (GK)
+Defender
+Attacker
+Referee
+Movement of the player
+Movement of the ball
+Gaining advantage
+Not offside
+offence
+14
+(B2)
+(B1)
+(C)
+(A)
+(GK)
+Laws of the Game 2026/27  |  Practical guidelines for match officials
