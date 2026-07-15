@@ -1,6 +1,6 @@
 {
   "incident_type": "handball",
-  "classifier_confidence": 0.3219792731338004,
+  "classifier_confidence": 0.2842979702560913,
   "features": {
     "player_role": "defender",
     "deliberate": false,

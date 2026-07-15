@@ -1,0 +1,14 @@
+{
+  "id": 16,
+  "incident_type": "tackle",
+  "video": "tackle_1",
+  "features": {
+    "player_role": null,
+    "tackle_type": null,
+    "contact_with_ball": null,
+    "contact_with_opponent": null,
+    "force": null,
+    "location": null,
+    "endangering_safety": null
+  }
+}

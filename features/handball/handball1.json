@@ -1,0 +1,15 @@
+{
+  "id": 7,
+  "incident_type": "handball",
+  "video": "handball1",
+  "features": {
+    "player_role": null,
+    "deliberate": null,
+    "arm_position": null,
+    "inside_penalty_area": null,
+    "ball_speed": null,
+    "distance_to_ball": null,
+    "deflection": null,
+    "goal_scoring_opportunity": null
+  }
+}

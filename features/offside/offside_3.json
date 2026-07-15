@@ -1,0 +1,15 @@
+{
+  "id": 12,
+  "incident_type": "offside",
+  "video": "offside_3",
+  "features": {
+    "position": null,
+    "ball_played": null,
+    "interfering_with_play": null,
+    "interfering_with_opponent": null,
+    "goal_scoring_opportunity": null,
+    "restart_type": null,
+    "deflection_from_defender": null,
+    "deliberate_play_by_defender": null
+  }
+}

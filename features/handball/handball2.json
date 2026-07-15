@@ -1,0 +1,17 @@
+{
+  "id": 8,
+  "incident_type": "handball",
+  "video": "handball2",
+  "features": {
+    "player_role": null,
+    "deliberate": null,
+    "arm_position": null,
+    "inside_penalty_area": null,
+    "ball_speed": "fast",
+    "distance_to_ball": "long",
+    "deflection": null,
+    "goal_scoring_opportunity": null,
+    "distance_pixels": 334.12,
+    "ball_speed_pixels": 43.85
+  }
+}

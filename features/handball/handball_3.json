@@ -1,0 +1,17 @@
+{
+  "id": 9,
+  "incident_type": "handball",
+  "video": "handball_3",
+  "features": {
+    "player_role": null,
+    "deliberate": null,
+    "arm_position": null,
+    "inside_penalty_area": null,
+    "ball_speed": "slow",
+    "distance_to_ball": "medium",
+    "deflection": null,
+    "goal_scoring_opportunity": null,
+    "distance_pixels": 110.57,
+    "ball_speed_pixels": 0.7
+  }
+}

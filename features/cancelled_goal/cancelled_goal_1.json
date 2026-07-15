@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "incident_type": "cancelled_goal",
+  "video": "cancelled_goal_1",
+  "features": {
+    "ball_crossed_line": null,
+    "handball": null,
+    "deliberate": null,
+    "offside": null,
+    "interfering_with_play": null,
+    "foul_on_goalkeeper": null,
+    "play_stopped": null,
+    "foul_in_attack": null
+  }
+}

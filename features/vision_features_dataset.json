@@ -1,0 +1,286 @@
+[
+  {
+    "id": 1,
+    "incident_type": "cancelled_goal",
+    "video": "cancelled_goal_1",
+    "features": {
+      "ball_crossed_line": null,
+      "handball": null,
+      "deliberate": null,
+      "offside": null,
+      "interfering_with_play": null,
+      "foul_on_goalkeeper": null,
+      "play_stopped": null,
+      "foul_in_attack": null
+    }
+  },
+  {
+    "id": 2,
+    "incident_type": "cancelled_goal",
+    "video": "cancelled_goal_2",
+    "features": {
+      "ball_crossed_line": null,
+      "handball": null,
+      "deliberate": null,
+      "offside": null,
+      "interfering_with_play": null,
+      "foul_on_goalkeeper": null,
+      "play_stopped": null,
+      "foul_in_attack": null
+    }
+  },
+  {
+    "id": 3,
+    "incident_type": "cancelled_goal",
+    "video": "cancelled_goal_3",
+    "features": {
+      "ball_crossed_line": null,
+      "handball": null,
+      "deliberate": null,
+      "offside": null,
+      "interfering_with_play": null,
+      "foul_on_goalkeeper": null,
+      "play_stopped": null,
+      "foul_in_attack": null
+    }
+  },
+  {
+    "id": 4,
+    "incident_type": "goal",
+    "video": "goal1",
+    "features": {
+      "ball_crossed_line": null,
+      "between_posts": null,
+      "under_crossbar": null,
+      "no_foul": null
+    }
+  },
+  {
+    "id": 5,
+    "incident_type": "goal",
+    "video": "goal_2",
+    "features": {
+      "ball_crossed_line": null,
+      "between_posts": null,
+      "under_crossbar": null,
+      "no_foul": null
+    }
+  },
+  {
+    "id": 6,
+    "incident_type": "goal",
+    "video": "goal_3",
+    "features": {
+      "ball_crossed_line": null,
+      "between_posts": null,
+      "under_crossbar": null,
+      "no_foul": null
+    }
+  },
+  {
+    "id": 7,
+    "incident_type": "handball",
+    "video": "handball1",
+    "features": {
+      "player_role": null,
+      "deliberate": null,
+      "arm_position": null,
+      "inside_penalty_area": null,
+      "ball_speed": null,
+      "distance_to_ball": null,
+      "deflection": null,
+      "goal_scoring_opportunity": null
+    }
+  },
+  {
+    "id": 8,
+    "incident_type": "handball",
+    "video": "handball2",
+    "features": {
+      "player_role": null,
+      "deliberate": null,
+      "arm_position": null,
+      "inside_penalty_area": null,
+      "ball_speed": "fast",
+      "distance_to_ball": "long",
+      "deflection": null,
+      "goal_scoring_opportunity": null,
+      "distance_pixels": 334.12,
+      "ball_speed_pixels": 43.85
+    }
+  },
+  {
+    "id": 9,
+    "incident_type": "handball",
+    "video": "handball_3",
+    "features": {
+      "player_role": null,
+      "deliberate": null,
+      "arm_position": null,
+      "inside_penalty_area": null,
+      "ball_speed": "slow",
+      "distance_to_ball": "medium",
+      "deflection": null,
+      "goal_scoring_opportunity": null,
+      "distance_pixels": 110.57,
+      "ball_speed_pixels": 0.7
+    }
+  },
+  {
+    "id": 10,
+    "incident_type": "offside",
+    "video": "offside1",
+    "features": {
+      "position": null,
+      "ball_played": null,
+      "interfering_with_play": null,
+      "interfering_with_opponent": null,
+      "goal_scoring_opportunity": null,
+      "restart_type": null,
+      "deflection_from_defender": null,
+      "deliberate_play_by_defender": null
+    }
+  },
+  {
+    "id": 11,
+    "incident_type": "offside",
+    "video": "offside_2",
+    "features": {
+      "position": null,
+      "ball_played": null,
+      "interfering_with_play": null,
+      "interfering_with_opponent": null,
+      "goal_scoring_opportunity": null,
+      "restart_type": null,
+      "deflection_from_defender": null,
+      "deliberate_play_by_defender": null
+    }
+  },
+  {
+    "id": 12,
+    "incident_type": "offside",
+    "video": "offside_3",
+    "features": {
+      "position": null,
+      "ball_played": null,
+      "interfering_with_play": null,
+      "interfering_with_opponent": null,
+      "goal_scoring_opportunity": null,
+      "restart_type": null,
+      "deflection_from_defender": null,
+      "deliberate_play_by_defender": null
+    }
+  },
+  {
+    "id": 13,
+    "incident_type": "red_card",
+    "video": "red_card1",
+    "features": {}
+  },
+  {
+    "id": 14,
+    "incident_type": "red_card",
+    "video": "red_card2",
+    "features": {}
+  },
+  {
+    "id": 15,
+    "incident_type": "red_card",
+    "video": "red_card_3",
+    "features": {}
+  },
+  {
+    "id": 16,
+    "incident_type": "tackle",
+    "video": "tackle_1",
+    "features": {
+      "player_role": null,
+      "tackle_type": null,
+      "contact_with_ball": null,
+      "contact_with_opponent": null,
+      "force": null,
+      "location": null,
+      "endangering_safety": null
+    }
+  },
+  {
+    "id": 17,
+    "incident_type": "tackle",
+    "video": "tackle_2",
+    "features": {
+      "player_role": null,
+      "tackle_type": null,
+      "contact_with_ball": null,
+      "contact_with_opponent": null,
+      "force": null,
+      "location": null,
+      "endangering_safety": null
+    }
+  },
+  {
+    "id": 18,
+    "incident_type": "tackle",
+    "video": "tackle_3",
+    "features": {
+      "player_role": null,
+      "tackle_type": null,
+      "contact_with_ball": null,
+      "contact_with_opponent": null,
+      "force": null,
+      "location": null,
+      "endangering_safety": null
+    }
+  },
+  {
+    "id": 19,
+    "incident_type": "var",
+    "video": "var_no_penalty",
+    "features": {
+      "review_type": null,
+      "possible_offence": null,
+      "var_initiated": null
+    }
+  },
+  {
+    "id": 20,
+    "incident_type": "var",
+    "video": "var_no_penalty2",
+    "features": {
+      "review_type": null,
+      "possible_offence": null,
+      "var_initiated": null
+    }
+  },
+  {
+    "id": 21,
+    "incident_type": "var",
+    "video": "var_penalty",
+    "features": {
+      "review_type": null,
+      "possible_offence": null,
+      "var_initiated": null
+    }
+  },
+  {
+    "id": 22,
+    "incident_type": "var",
+    "video": "var_penalty_retaken",
+    "features": {
+      "review_type": null,
+      "possible_offence": null,
+      "var_initiated": null
+    }
+  },
+  {
+    "id": 23,
+    "incident_type": "yellow_card",
+    "video": "yellow_card",
+    "features": {}
+  },
+  {
+    "id": 24,
+    "incident_type": "yellow_card",
+    "video": "yellow_card_2",
+    "features": {}
+  }
+]

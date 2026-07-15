@@ -1,0 +1,11 @@
+{
+  "id": 6,
+  "incident_type": "goal",
+  "video": "goal_3",
+  "features": {
+    "ball_crossed_line": null,
+    "between_posts": null,
+    "under_crossbar": null,
+    "no_foul": null
+  }
+}

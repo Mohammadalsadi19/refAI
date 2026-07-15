@@ -75,19 +75,64 @@ def point_in_polygon(point, polygon):
 
 
 def build_base_features(incident_type):
-    """Returns every SCHEMA field for this incident_type set to None.
-    Keep this list in sync with RefAI.py's SCHEMAS."""
     base = {
-        "handball": ["player_role", "deliberate", "arm_position", "inside_penalty_area",
-                     "ball_speed", "distance_to_ball", "deflection", "goal_scoring_opportunity"],
-        "tackle": ["player_role", "tackle_type", "contact_with_ball", "contact_with_opponent",
-                   "force", "location", "endangering_safety"],
-        "offside": ["position", "ball_played", "interfering_with_play",
-                    "interfering_with_opponent", "goal_scoring_opportunity",
-                    "restart_type", "deflection_from_defender", "deliberate_play_by_defender"],
-    }.get(incident_type, [])
-    return {k: None for k in base}
+        "handball": [
+            "player_role", "deliberate", "arm_position",
+            "inside_penalty_area", "ball_speed",
+            "distance_to_ball", "deflection",
+            "goal_scoring_opportunity"
+        ],
 
+        "tackle": [
+            "player_role", "tackle_type",
+            "contact_with_ball", "contact_with_opponent",
+            "force", "location",
+            "endangering_safety"
+        ],
+
+        "offside": [
+            "position",
+            "ball_played",
+            "interfering_with_play",
+            "interfering_with_opponent",
+            "goal_scoring_opportunity",
+            "restart_type",
+            "deflection_from_defender",
+            "deliberate_play_by_defender",
+        ],
+
+        "goal": [
+            "ball_crossed_line",
+            "between_posts",
+            "under_crossbar",
+            "no_foul",
+        ],
+
+        "cancelled_goal": [
+            "ball_crossed_line",
+            "handball",
+            "deliberate",
+            "offside",
+            "interfering_with_play",
+            "foul_on_goalkeeper",
+            "play_stopped",
+            "foul_in_attack",
+        ],
+
+        "var": [
+            "review_type",
+            "possible_offence",
+            "var_initiated",
+        ],
+
+        "substitution": [
+            "substitution_type",
+            "time",
+            "referee_permission",
+        ],
+    }.get(incident_type, [])
+
+    return {k: None for k in base}
 
 def load_tracks(track_file):
     with open(track_file, "r", encoding="utf-8") as f:
@@ -112,28 +157,43 @@ def pick_ball_track(ball_groups):
     return max(ball_groups.items(), key=lambda kv: len(kv[1]))[1]
 
 
-def pick_primary_player(person_groups, ball_points):
-    """Picks the player whose average distance to the ball is smallest —
-    the one most likely involved in the incident."""
-    if not person_groups or not ball_points:
-        return None, None
+def pick_primary_players(person_groups, ball_points, top_k=2):
 
-    ball_by_frame = {p["frame_id"]: p["centroid"] for p in ball_points}
-    best_id, best_avg = None, float("inf")
+    if not person_groups or not ball_points:
+        return []
+
+    ball_by_frame = {
+        p["frame_id"]: p["centroid"]
+        for p in ball_points
+    }
+
+    scores = []
 
     for tid, points in person_groups.items():
-        dists = [
-            centroid_distance(p["centroid"], ball_by_frame[p["frame_id"]])
-            for p in points if p["frame_id"] in ball_by_frame
+
+        distances = [
+            centroid_distance(
+                p["centroid"],
+                ball_by_frame[p["frame_id"]]
+            )
+            for p in points
+            if p["frame_id"] in ball_by_frame
         ]
-        if not dists:
+
+        if not distances:
             continue
-        avg = sum(dists) / len(dists)
-        if avg < best_avg:
-            best_avg, best_id = avg, tid
 
-    return best_id, person_groups.get(best_id)
+        scores.append(
+            (
+                min(distances),
+                tid,
+                points
+            )
+        )
 
+    scores.sort(key=lambda x: x[0])
+
+    return scores[:top_k]
 
 def compute_geometric_features(tracks, incident_type):
     features = build_base_features(incident_type)
@@ -145,9 +205,17 @@ def compute_geometric_features(tracks, incident_type):
     if not ball_points:
         return features  # nothing usable without a ball track
 
-    primary_id, primary_points = pick_primary_player(person_groups, ball_points)
-    if not primary_points:
+    players = pick_primary_players(
+        person_groups,
+        ball_points,
+        top_k=2
+    )
+
+    if not players:
         return features
+
+    primary_id = players[0][1]
+    primary_points = players[0][2]
 
     ball_by_frame = {p["frame_id"]: p for p in ball_points}
     primary_by_frame = {p["frame_id"]: p for p in primary_points}
@@ -156,55 +224,70 @@ def compute_geometric_features(tracks, incident_type):
         return features
 
     # --- contact_with_ball ---
-    contact = any(
-        bbox_iou(primary_by_frame[f]["bbox"], ball_by_frame[f]["bbox"]) > CONTACT_IOU_THRESHOLD
-        for f in shared_frames
-    )
-    if "contact_with_ball" in features:
-        features["contact_with_ball"] = contact
+    contact = False
 
-    # --- contact_with_opponent (any OTHER person overlapping the primary player) ---
-    if "contact_with_opponent" in features:
-        opponent_contact = False
-        for tid, points in person_groups.items():
-            if tid == primary_id:
-                continue
-            other_by_frame = {p["frame_id"]: p for p in points}
-            for f in shared_frames:
-                if f in other_by_frame and bbox_iou(
-                        primary_by_frame[f]["bbox"], other_by_frame[f]["bbox"]) > CONTACT_IOU_THRESHOLD:
-                    opponent_contact = True
-                    break
-            if opponent_contact:
-                break
-        features["contact_with_opponent"] = opponent_contact
+    for f in shared_frames:
+
+        iou = bbox_iou(
+            primary_by_frame[f]["bbox"],
+            ball_by_frame[f]["bbox"]
+        )
+
+        dist = centroid_distance(
+            primary_by_frame[f]["centroid"],
+            ball_by_frame[f]["centroid"]
+        )
+
+        if iou > CONTACT_IOU_THRESHOLD or dist < 25:
+            contact = True
+            break
 
     # --- distance_to_ball (bucketed pixel distance) ---
+    # --- distance_to_ball (bucketed pixel distance) ---
     if "distance_to_ball" in features:
-        avg_dist = sum(
-            centroid_distance(primary_by_frame[f]["centroid"], ball_by_frame[f]["centroid"])
+        distances = [
+            centroid_distance(
+                primary_by_frame[f]["centroid"],
+                ball_by_frame[f]["centroid"]
+            )
             for f in shared_frames
-        ) / len(shared_frames)
-        if avg_dist <= DISTANCE_SHORT_PX:
-            features["distance_to_ball"] = "short"
-        elif avg_dist <= DISTANCE_MEDIUM_PX:
-            features["distance_to_ball"] = "medium"
-        else:
-            features["distance_to_ball"] = "long"
+        ]
 
+        if distances:  # تأكد إنه مش فاضي
+            min_distance = min(distances)
+
+            if min_distance <= DISTANCE_SHORT_PX:
+                features["distance_to_ball"] = "short"
+            elif min_distance <= DISTANCE_MEDIUM_PX:
+                features["distance_to_ball"] = "medium"
+            else:
+                features["distance_to_ball"] = "long"
+
+            features["distance_pixels"] = round(min_distance, 2)
+
+    # --- ball_speed (bucketed pixel displacement per frame) ---
     # --- ball_speed (bucketed pixel displacement per frame) ---
     if "ball_speed" in features and len(ball_points) >= 2:
         displacements = [
-            centroid_distance(ball_points[i]["centroid"], ball_points[i - 1]["centroid"])
+            centroid_distance(
+                ball_points[i]["centroid"],
+                ball_points[i-1]["centroid"]
+            )
             for i in range(1, len(ball_points))
         ]
-        avg_speed = sum(displacements) / len(displacements)
-        if avg_speed <= BALL_SPEED_SLOW_PX:
-            features["ball_speed"] = "slow"
-        elif avg_speed <= BALL_SPEED_FAST_PX:
-            features["ball_speed"] = "medium"
-        else:
-            features["ball_speed"] = "fast"
+
+        if displacements:  # تأكد إنه مش فاضي
+            max_speed = max(displacements)
+
+            if max_speed <= BALL_SPEED_SLOW_PX:
+                features["ball_speed"] = "slow"
+            elif max_speed <= BALL_SPEED_FAST_PX:
+                features["ball_speed"] = "medium"
+            else:
+                features["ball_speed"] = "fast"
+
+            features["ball_speed_pixels"] = round(max_speed, 2)
+
 
     # --- location (only if you've calibrated PENALTY_AREA_POLYGON) ---
     if "location" in features and PENALTY_AREA_POLYGON is not None:
@@ -216,6 +299,16 @@ def compute_geometric_features(tracks, incident_type):
         last_point = primary_by_frame[shared_frames[-1]]["centroid"]
         features["inside_penalty_area"] = bool(point_in_polygon(last_point, PENALTY_AREA_POLYGON))
 
+        filled = sum(
+            v is not None
+            for v in features.values()
+        )
+
+
+        features["_vision_confidence"] = round(
+            filled / len(features),
+            2
+        )
     return features
 
 

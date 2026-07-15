@@ -32,11 +32,12 @@ def track_video_frames(frame_folder):
             continue
 
         results = model.track(
-            frame,
-            persist=True,  # keeps track IDs consistent across this loop
-            classes=[PERSON_CLASS_ID, BALL_CLASS_ID],
-            verbose=False,
-        )
+        frame,
+        persist=True,
+        tracker="bytetrack.yaml",
+        classes=[PERSON_CLASS_ID, BALL_CLASS_ID],
+        verbose=False,
+    )
         result = results[0]
 
         if result.boxes is None or result.boxes.id is None:
@@ -45,16 +46,29 @@ def track_video_frames(frame_folder):
         boxes = result.boxes.xyxy.cpu().numpy()
         ids = result.boxes.id.cpu().numpy().astype(int)
         classes = result.boxes.cls.cpu().numpy().astype(int)
+        confidences = result.boxes.conf.cpu().numpy()
 
-        for box, track_id, cls in zip(boxes, ids, classes):
+        for box, track_id, cls, conf in zip(boxes, ids, classes, confidences):
+
             x1, y1, x2, y2 = box
-            cx, cy = (x1 + x2) / 2, (y1 + y2) / 2
+
+            cx = (x1 + x2) / 2
+            cy = (y1 + y2) / 2
+
+            width = x2 - x1
+            height = y2 - y1
+            area = width * height
+
             tracks.append({
                 "frame_id": frame_id,
                 "track_id": int(track_id),
                 "class_name": "ball" if cls == BALL_CLASS_ID else "person",
                 "bbox": [float(x1), float(y1), float(x2), float(y2)],
                 "centroid": [float(cx), float(cy)],
+                "width": float(width),
+                "height": float(height),
+                "area": float(area),
+                "confidence": float(conf)
             })
 
     return tracks
