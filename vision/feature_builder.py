@@ -253,7 +253,7 @@ def compute_geometric_features(tracks, incident_type):
             for f in shared_frames
         ]
 
-        if distances:  # تأكد إنه مش فاضي
+        if distances:  
             min_distance = min(distances)
 
             if min_distance <= DISTANCE_SHORT_PX:
@@ -276,7 +276,7 @@ def compute_geometric_features(tracks, incident_type):
             for i in range(1, len(ball_points))
         ]
 
-        if displacements:  # تأكد إنه مش فاضي
+        if displacements: 
             max_speed = max(displacements)
 
             if max_speed <= BALL_SPEED_SLOW_PX:

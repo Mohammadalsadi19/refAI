@@ -3,7 +3,6 @@ from pathlib import Path
 
 VIDEO_DIR = Path("videos")
 
-# ابحث عن أول فيديو داخل جميع الأقسام
 video_files = list(VIDEO_DIR.glob("*/*.mp4"))
 
 if not video_files:
